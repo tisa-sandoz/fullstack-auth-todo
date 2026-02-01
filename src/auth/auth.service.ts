@@ -17,7 +17,7 @@ export class AuthService {
   ): Promise<User> {
     const hash = await bcrypt.hash(password, 10);
 
-    return this.prisma.client.user.create({
+    return this.prisma.user.create({
       data: {
         firstname,
         lastname,
